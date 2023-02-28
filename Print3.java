@@ -10,14 +10,14 @@ System.out.print("\n");
 	}
 	static void printpatternDec(int nr,char ch)
 	{
-		for(int i=1;i<=nr;i++)
+		for(int i=nr;i>0;i--)
 		{
 			printpatternOneRow(ch,i);
 		}
 	}
 	static void printpatterninc(int nr,char ch)
 	{
-		for(int i=nr;i>0;i--)
+		for(int i=1;i<=nr;i++)
 		{
 			printpatternOneRow(ch,i);
 		}
@@ -25,21 +25,19 @@ System.out.print("\n");
 
 	public static void main(String[] args) 
 	{
-	Scanner Sc=new Scanner(System.in);
-	int n =Sc.nextInt();
+	int n=10;
+	char c='*';
 	if(n%2==0)
 		{
-		printpattrenDec(n/2,'*');
-		printpattreninc(n/2,'*');
-
-	}
-	else
+		printpatterninc(n/2,c);
+		printpatternDec(n/2,c);
+		}
+else
 		{
-		printpattreninc(n/2,'*');
-
-		printpattrenDec(n/2+1,'*');
+	     printpatterninc((int)(n/2),c);
+		 printpatternDec((n+1)/2,c);
 
 
 }
-	}
+}
 }
